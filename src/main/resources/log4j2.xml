@@ -10,7 +10,7 @@
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="[%p] [%d{ISO8601}] [%X{id}] [${weblogic.Name}] [%t] [%C] [Linea:%L]- %m%n"/>
         </Console>
-        <RollingFile name="transformerRedis-log" fileName="transformerRedis.log"
+        <RollingFile name="log-log" fileName="log.log"
                      filePattern="transformerRedis-%d{yyyy-MM-dd}-%i.log.gz">
             <PatternLayout pattern="${PATTERN}"/>
             <Policies>
@@ -28,7 +28,7 @@
 
         <Root level="debug">
             <AppenderRef ref="Console"/>
-            <AppenderRef ref="transformerRedis-log"/>
+            <AppenderRef ref="log-log"/>
         </Root>
     </Loggers>
 </Configuration>
