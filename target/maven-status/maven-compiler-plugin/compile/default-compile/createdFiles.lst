@@ -1,0 +1,13 @@
+co\com\tigoune\transformerredis\dao\MainNode.class
+co\com\tigoune\transformerredis\TransformerRedisApplication.class
+co\com\tigoune\transformerredis\exception\FileStorageException.class
+co\com\tigoune\transformerredis\dao\Node.class
+co\com\tigoune\transformerredis\dao\SecondNode.class
+co\com\tigoune\transformerredis\Constant.class
+co\com\tigoune\transformerredis\service\FileStorageService.class
+co\com\tigoune\transformerredis\controller\FileController.class
+co\com\tigoune\transformerredis\dao\ThirdNode.class
+co\com\tigoune\transformerredis\response\UploadFileResponse.class
+co\com\tigoune\transformerredis\controller\ResourceController.class
+co\com\tigoune\transformerredis\dao\FourthNode.class
+co\com\tigoune\transformerredis\property\FileStorageProperties.class

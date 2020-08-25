@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="30" status="debug">
+
+    <Properties>
+        <Property name="LOG_DIR">${sys:web.root}</Property>
+        <Property name="PATTERN">[%p] [%d{ISO8601}] [%X{id}] [%t] [%C] [Linea:%L]- %m%n</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%p] [%d{ISO8601}] [%X{id}] [${weblogic.Name}] [%t] [%C] [Linea:%L]- %m%n"/>
+        </Console>
+        <RollingFile name="transformerRedis-log" fileName="transformerRedis.log"
+                     filePattern="transformerRedis-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="${PATTERN}"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1"/>
+                <SizeBasedTriggeringPolicy size="500 MB" />
+            </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+
+        <Logger name="org.apache.http.wire" level="FATAL" />
+        <Logger name="org.apache.http.client" level="FATAL" />
+        <Logger name="httpclient.wire" level="FATAL" />
+        <Logger name="org.apache.commons.httpclient" level="FATAL" />
+
+        <Root level="debug">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="transformerRedis-log"/>
+        </Root>
+    </Loggers>
+</Configuration>
